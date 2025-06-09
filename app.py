@@ -3,7 +3,6 @@ Owner: Mohammad Shafay Joyo
 Email: msj2162@columbia.edu
 """
 
-
 import pandas as pd
 from flask import Flask, render_template, request
 from sklearn.preprocessing import StandardScaler
