@@ -17,7 +17,7 @@ url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-
 column_names = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age', 'Outcome']
 data = pd.read_csv(url, names=column_names)
 
-# Preprocess the data
+# Preprocessing the data
 X = data.drop('Outcome', axis=1)
 y = data['Outcome']
 
