@@ -2,7 +2,6 @@
 Owner: Mohammad Shafay Joyo
 Email: msj2162@columbia.edu
 """
-
 import pandas as pd
 from flask import Flask, render_template, request
 from sklearn.preprocessing import StandardScaler
@@ -12,7 +11,7 @@ from sklearn.metrics import accuracy_score
 
 app = Flask(__name__)
 
-# Load the dataset
+# Loading the dataset
 url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv"
 column_names = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age', 'Outcome']
 data = pd.read_csv(url, names=column_names)
@@ -21,18 +20,18 @@ data = pd.read_csv(url, names=column_names)
 X = data.drop('Outcome', axis=1)
 y = data['Outcome']
 
-# Scale the features
+# Scaling the features
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
-# Split the dataset into training and testing sets
+# Spliting the dataset into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
 
-# Train the model
+# Training the model
 model = LogisticRegression()
 model.fit(X_train, y_train)
 
-# Define a route for the home page
+# Defining a route for the home page
 @app.route('/')
 def index():
     return render_template('index.html')
