@@ -2,8 +2,6 @@
 Owner: Mohammad Shafay Joyo
 Email: msj2162@columbia.edu
 """
-
-
 import pandas as pd
 
 # Load the dataset
