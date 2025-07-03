@@ -9,9 +9,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
-app = Flask(__name__)
 
-# Load the dataset
+app = Flask(__name__)
+# Loading the dataset
 url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv"
 column_names = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age', 'Outcome']
 data = pd.read_csv(url, names=column_names)
@@ -31,7 +31,7 @@ X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, 
 model = LogisticRegression()
 model.fit(X_train, y_train)
 
-# Defining a route for the home page
+# Defining the route for the home page
 @app.route('/')
 def index():
     return render_template('index.html')
