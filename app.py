@@ -2,6 +2,7 @@
 Owner: Mohammad Shafay Joyo
 Email: msj2162@columbia.edu
 """
+
 import pandas as pd
 from flask import Flask, render_template, request
 from sklearn.preprocessing import StandardScaler
@@ -11,12 +12,12 @@ from sklearn.metrics import accuracy_score
 
 
 app = Flask(__name__)
-# Loading the dataset
+# Load the dataset
 url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv"
 column_names = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age', 'Outcome']
 data = pd.read_csv(url, names=column_names)
 
-# Preprocess the data
+# Preprocessing the data
 X = data.drop('Outcome', axis=1)
 y = data['Outcome']
 
